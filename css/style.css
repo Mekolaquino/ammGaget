@@ -87,7 +87,7 @@ section{
     background:var(--darkblue);
 }
 
-/* -------------------------------------.3header */
+/* -------------------------------------header */
 
 .header .nav1{
     background:#fff;
@@ -382,7 +382,7 @@ section{
 }
 
 .bestSeller .bestSeller-slider .box .content h3{
-    font-size: 2px;
+    font-size: 20px;
     color:var(--black);
 }
 
@@ -423,6 +423,7 @@ section{
     width: 100%;
   }
   .card .img img{
+    margin-top: 10px;
     height: 100%;
     width: 100%;
     object-fit: contain;
