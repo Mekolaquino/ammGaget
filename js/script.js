@@ -111,3 +111,47 @@ $(document).ready(function(){
       }]
   });
 });
+
+let countDate = new Date('dec 12, 2022 00:00:00').getTime();
+
+function countDown(){
+
+    let now = new Date().getTime();
+	gap = countDate - now;
+
+    let seconds = 1000;
+    let minutes = seconds * 60;
+    let hours = minutes * 60;
+    let days = hours * 24;
+
+  let d = Math.floor(gap / (days));
+	let h = Math.floor((gap % (days)) / (hours));
+	let m = Math.floor((gap % (hours)) / (minutes));
+	let s = Math.floor((gap % (minutes)) / (seconds));
+
+    document.getElementById('#days').innerText = d;
+    document.getElementById('#hours').innerText = h;
+    document.getElementById('#minutes').innerText = m;
+    document.getElementById('#seconds').innerText = s;
+
+}
+
+$(document).ready(function(){
+
+
+
+  $('.category .btn').click(function(){
+
+      let filter = $(this).attr('data-filter');
+      if(filter == 'all'){
+          $('.category .boX').show(400);
+      }else{
+          $('.category .boX').not('.'+filter).hide(200);
+          $('.category .boX').filter('.'+filter).show(400);
+      }
+
+      $(this).addClass('button-active').siblings().removeClass('button-active');
+
+  });
+
+});

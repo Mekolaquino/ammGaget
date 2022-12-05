@@ -486,8 +486,6 @@ h2 {
     cursor: pointer;
 }
 
-/* -------------------------------hero section */
-
 
 
 /* -----------------------------------icon section */
@@ -521,7 +519,163 @@ h2 {
     color:var(--babyblue);
 }
 
-/* ---------------------------------best seller */
+/* -------------------------------------best seller */
+
+.bestSeller{
+    min-height: 100vh;
+}
+
+.bestSeller .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:20px 0;
+    width: 85%;
+    margin:0 auto;
+}
+
+.bestSeller .box-container .box{
+    flex:1 1 30rem;
+    border:1px solid rgba(0,0,0,.3);
+    overflow: hidden;
+    position: relative;
+    margin:10px 20px;
+}
+
+.bestSeller .box-container .box .image{
+    height: 20rem;
+    padding:20px;
+    text-align: center;
+    background:#f0f0f0;
+}
+
+.bestSeller .box-container .box .image img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.bestSeller .box-container .box .info h3{
+    padding:10px;
+    font-size: 20px;
+    color:var(--blue);
+}
+
+.bestSeller .box-container .box .info .subInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px;
+    border-top: 1px solid rgba(0,0,0,.3);
+}
+
+.bestSeller .box-container .box .info .subInfo .price{
+    color:#000;
+    font-size: 20px;
+}
+
+.bestSeller .box-container .box .info .subInfo .price span{
+    color:#666;
+    font-size: 15px;
+    text-decoration: line-through;
+}
+
+.bestSeller .box-container .box .info .subInfo .stars i{
+    color:var(--blue);
+    font-size: 15px;
+}
+
+.bestSeller .box-container .box .overlay{
+    position: absolute;
+    top:0; left: 0;
+    height:20rem;
+    width: 100%;
+    background:rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+}
+
+.bestSeller .box-container .box:hover .overlay{
+    transform: scale(1);
+}
+
+.bestSeller .box-container .box .overlay a{
+    font-size: 20px;
+    padding:15px 20px;
+    background:#fff;
+    color:#666;
+    margin:10px;
+    transform: translateY(-15rem);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.bestSeller .box-container .box:hover .overlay a{
+    transform: translateY(0rem);
+}
+
+.bestSeller .box-container .box .overlay a:hover{
+    color:var(--blue);
+}
+
+/* ---------------------------------------deals */
+
+.deal .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:15px;
+    text-align: center;
+    border: 1px solid black;
+    background:var(--white-color);
+    border-radius: 5px;
+    padding:10px;
+}
+
+.deal .row .content{
+    flex:1 1 40rem;
+    padding:10px;
+}
+
+.deal .row .image{
+    flex:1 1 40rem;
+    padding:20px;
+}
+
+.deal .row .image img{
+    width:100%;
+}
+
+.deal .row .discount{
+    font-size: 20px;
+    color:var(--blue);
+}
+
+.deal .row .text{
+    font-size: 40px;
+    color:black;
+    padding:5px 0;
+}
+
+.deal .row .count-down{
+    display: flex;
+    gap:20px;
+    justify-Content: center;
+    padding:5px 0;
+}
+
+.deal .row .count-down h3{
+    color:var(--blue);
+    font-size: 40px;
+}
+
+.deal .row .count-down{
+    color:var(--babyblue);
+    font-size: 15px;
+}
+
+/* ---------------------------------partners */
 
 .partner .partner-slider .box{
     margin:20px 0;
@@ -546,7 +700,7 @@ h2 {
 
 .partner .partner-slider .box .image img{
     height: 100px;
-    width: 100%;
+    width: 75%;
 }
 
 .partner .partner-slider .box .icons{
@@ -674,7 +828,7 @@ h2 {
     transform: scale(0.9);
   }
   .wrapper{
-    margin: 100px auto;
+    margin: 50px auto;
     max-width: 1100px;
   }
   .wrapper .items{
@@ -684,53 +838,9 @@ h2 {
     justify-content: space-between;
 }
 
-/* --------------------------------------partnershp */
 
 .partner{
-    padding-top: 150px;
-}
-h2{
-    text-align: center;
-    padding: 20px;
-}
-.slick-slide{
-    margin: 0 20px;
-}
-.slick-slide img{
-    width: 100%;
-}
-.slick-slider{
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-}
-.slick-list{
-    position: relative;
-    display: block;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
-.slick-track{
-    position: relative;
-    top: 0;
-    left: 0;
-    display: block
-}
-.slick-slide{
-    display: none;
-    float: left;
-    height: 100%;
-    min-height: 1px;
-}
-.slick-slide img{
-    display: block;
-}
-.slick-initialized .slick-slide{
-    display: block;
-}
-.copy{
-    padding-top: 250px;
+    padding-top: 50px;
 }
 
 /* ------------------------------------client review */
@@ -811,7 +921,93 @@ h2{
     text-transform: none;
 }
 
+/* --------------------------------------category */
 
+.category{
+    min-height: 100vh;
+}
+
+.category .controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:15px 0;
+    list-style: none;
+}
+
+.category .controls .btn{
+    margin:20px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+}
+
+.category .controls .btn.button-active{
+    background:#333;
+}
+
+.category .image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category .image-container .boX{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:20px;
+    border:1px solid rgba(0,0,0,.3);
+    flex:1 1 30rem;
+}
+
+.category .image-container .boX .image{
+    height:12rem;
+    width: 20rem;
+    text-align: center;
+    padding:10px;
+    background: #f0f0f0;
+}
+
+.category .image-container .boX .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.category .image-container .boX:hover .image{
+    background:#ccc;
+}
+
+.category .image-container .boX .info{
+    width: 100%;
+}
+
+.category .image-container .boX .info h3{
+    font-size: 20px;
+    color:var(--blue);
+    padding:10px;
+}
+
+.category .image-container .boX .info .subInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0,0,0,.3);
+    padding:10px;
+}
+
+.category .image-container .boX .info .subInfo .price{
+    color:#000;
+    font-size: 20px;
+}
+
+.category .image-container .boX .info .subInfo .stars i{
+    color:var(--blue);
+    font-size: 15px;
+}
 
 /* ----------------------------------about us */
 
