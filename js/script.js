@@ -39,7 +39,7 @@ window.onload = () =>{
 }
 
 
-var swiper = new Swiper(".bestSeller-slider", {
+var swiper = new Swiper(".partner-slider", {
   spaceBetween: 10,
   loop:true,
   centeredSlides: true,
@@ -67,3 +67,47 @@ var swiper = new Swiper(".bestSeller-slider", {
   },
 });
 
+var swiper = new Swiper(".reviewsSlider", {
+  spaceBetween: 10,
+  grabCursor:true,
+  loop:true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 9500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+$(document).ready(function(){
+  $('.customer-logos').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: false,
+      dots: false,
+      pauseOnHover:false,
+      responsive: [{
+          breakpoint: 768,
+          setting: {
+              slidesToShow:4
+          }
+      }, {
+          breakpoint: 520,
+          setting: {
+              slidesToShow: 3
+          }
+      }]
+  });
+});

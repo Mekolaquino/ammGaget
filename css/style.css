@@ -523,7 +523,7 @@ h2 {
 
 /* ---------------------------------best seller */
 
-.bestSeller .bestSeller-slider .box{
+.partner .partner-slider .box{
     margin:20px 0;
     position: relative;
     overflow: hidden;
@@ -531,24 +531,25 @@ h2 {
     text-align: center;
 }
 
-.bestSeller .bestSeller-slider .box:hover{
+.partner .partner-slider .box:hover{
     border:var(--border-hover);
 }
 
-.bestSeller .bestSeller-slider .box .image{
+.partner .partner-slider .box .image{
     padding:10px;
     background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
 }
 
-.bestSeller .bestSeller-slider .box:hover .image{
+.partner .partner-slider .box:hover .image{
     transform: translateY(6rem);
 }
 
-.bestSeller .bestSeller-slider .box .image img{
-    height: 25rem;
+.partner .partner-slider .box .image img{
+    height: 100px;
+    width: 100%;
 }
 
-.bestSeller .bestSeller-slider .box .icons{
+.partner .partner-slider .box .icons{
     border-bottom: var(--border-hover);
     position: absolute;
     top:0; left:0; right: 0;
@@ -557,38 +558,38 @@ h2 {
     transform: translateY(-105%);
 }
 
-.bestSeller .bestSeller-slider .box:hover .icons{
+.partner .partner-slider .box:hover .icons{
     transform: translateY(0%);
 }
 
-.bestSeller .bestSeller-slider .box .icons a{
+.partner .partner-slider .box .icons a{
     color:var(--black);
     font-size: 22px;
     padding:13px 15px;
 }
 
-.bestSeller .bestSeller-slider .box .icons a:hover{
+.partner .partner-slider .box .icons a:hover{
     background:var(--green);
     color:#fff;
 }
 
-.bestSeller .bestSeller-slider .box .content{
+.partner .partner-slider .box .content{
     background:#eee;
     padding:15px;
 }
 
-.bestSeller .bestSeller-slider .box .content h3{
+.partner .partner-slider .box .content h3{
     font-size: 20px;
     color:var(--black);
 }
 
-.bestSeller .bestSeller-slider .box .content .price{
+.partner .partner-slider .box .content .price{
     font-size: 22px;
     color:var(--black);
     padding-top: 10px;
 }
 
-.bestSeller .bestSeller-slider .box .content .price span{
+.partner .partner-slider .box .content .price span{
     font-size: 15px;
     color:var(--light-color);
     text-decoration: line-through;
@@ -681,6 +682,100 @@ h2 {
     max-width: 720px;
     width: 100%;
     justify-content: space-between;
+}
+
+/* --------------------------------------partnershp */
+
+.partner{
+    padding-top: 150px;
+}
+h2{
+    text-align: center;
+    padding: 20px;
+}
+.slick-slide{
+    margin: 0 20px;
+}
+.slick-slide img{
+    width: 100%;
+}
+.slick-slider{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+.slick-list{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block
+}
+.slick-slide{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.slick-slide img{
+    display: block;
+}
+.slick-initialized .slick-slide{
+    display: block;
+}
+.copy{
+    padding-top: 250px;
+}
+
+/* ------------------------------------client review */
+
+.reviews .reviewsSlider .box{
+    height: auto;
+    width: 100%;
+    background: #fff;
+    border:var(--border);
+    padding:20px;
+    text-align: center;
+    margin:20px 0;
+}
+
+.reviews .reviewsSlider .box:hover{
+    border:var(--border-hover);
+}
+
+.reviews .reviewsSlider .box img{
+    height:70px;
+    width:70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviews .reviewsSlider .box h3{
+    color:var(--black);
+    font-size: 2pxpx;
+    padding:5px 0;
+}
+
+.reviews .reviewsSlider .box p{
+    color:black;
+    font-size: 15px;
+    padding:1px 0;
+    line-height: 2;
+}
+
+.reviews .reviewsSlider .box .stars{
+    padding-top: 5px;
+}
+
+.reviews .reviewsSlider .box .stars i{
+    font-size: 17px;
+    color:var(--blue);
 }
 
 /* -----------------------------------news letter */
@@ -791,6 +886,7 @@ h2 {
 /* -------------------------footer  */
 
 .footer .box-container{
+    border-top: var(--border);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap:15px;
