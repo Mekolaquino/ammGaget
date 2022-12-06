@@ -39,6 +39,8 @@ window.onload = () =>{
 }
 
 
+
+
 var swiper = new Swiper(".partner-slider", {
   spaceBetween: 10,
   loop:true,
@@ -90,6 +92,28 @@ var swiper = new Swiper(".reviewsSlider", {
 });
 
 $(document).ready(function(){
+  $('.home-slider').owlCarousel({
+    items:1,
+    nav:true,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:8000,
+    loop:true
+});
+$('.gallery .btn').click(function(){
+
+  let filter = $(this).attr('data-filter');
+  if(filter == 'all'){
+      $('.gallery .box').show(400);
+  }
+  else {
+      $('.gallery .box').not('.'+filter).hide(100);
+      $('.gallery .box').filter('.'+filter).show(400);
+  }
+
+  $(this).addClass('button-active').siblings().removeClass('button-active');
+
+});
   $('.customer-logos').slick({
       slidesToShow: 6,
       slidesToScroll: 1,
@@ -112,46 +136,31 @@ $(document).ready(function(){
   });
 });
 
-let countDate = new Date('dec 12, 2022 00:00:00').getTime();
 
-function countDown(){
 
-    let now = new Date().getTime();
-	gap = countDate - now;
+const days = document.getElementById('days');
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
 
-    let seconds = 1000;
-    let minutes = seconds * 60;
-    let hours = minutes * 60;
-    let days = hours * 24;
+const currentYear = new Date().getFullYear();
 
-  let d = Math.floor(gap / (days));
-	let h = Math.floor((gap % (days)) / (hours));
-	let m = Math.floor((gap % (hours)) / (minutes));
-	let s = Math.floor((gap % (minutes)) / (seconds));
+const newYearTime = new Date(`January 01 $ {currentYear + 1} 00:00:00`);
 
-    document.getElementById('#days').innerText = d;
-    document.getElementById('#hours').innerText = h;
-    document.getElementById('#minutes').innerText = m;
-    document.getElementById('#seconds').innerText = s;
+function updateCountdown() {
+  const currentTime = new Date();
+  const diff = newYearTime - currentTime;
 
+  const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+  const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+  const m = Math.floor(diff / 1000 / 60) % 60;
+  const s = Math.floor(diff / 1000)% 60;
+
+ 
+  // days.innerHTML = d;
+  // hours.innerHTML = h < 10 ? '0' + h : h;
+  // minutes.innerHTML = m < 10 ? '0' + m : m;
+  // seconds.innerHTML = s < 10 ? '0' + s : s;
 }
 
-$(document).ready(function(){
-
-
-
-  $('.category .btn').click(function(){
-
-      let filter = $(this).attr('data-filter');
-      if(filter == 'all'){
-          $('.category .boX').show(400);
-      }else{
-          $('.category .boX').not('.'+filter).hide(200);
-          $('.category .boX').filter('.'+filter).show(400);
-      }
-
-      $(this).addClass('button-active').siblings().removeClass('button-active');
-
-  });
-
-});
+setInterval(updateCountdown, 1000);
